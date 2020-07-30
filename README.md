@@ -1,4 +1,4 @@
-# Omnipay: alma
+# Omnipay: Alma
 
 **Alma driver for the Omnipay PHP payment processing library**
 
