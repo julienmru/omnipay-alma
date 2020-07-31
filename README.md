@@ -21,6 +21,8 @@ The following gateways are provided by this package:
 
 Alma requires to specify either shipping or billing address when submitting the payment which you can send in the `CreditCard` object.
 
+You may check if your cart is eligible to Atma using the `eligibility` method and checking `isSuccessful` in the response.
+
 For general usage instructions, please see the main [Omnipay](https://github.com/thephpleague/omnipay) repository.
 
 ## Support

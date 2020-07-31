@@ -45,4 +45,8 @@ class Gateway extends AbstractGateway
         return $this->createRequest('\Omnipay\Alma\Message\PurchaseRequest', $parameters);
     }
     
+    public function eligibility(array $parameters = array())
+    {
+        return $this->createRequest('\Omnipay\Alma\Message\EligibilityRequest', $parameters);
+    }
 }
