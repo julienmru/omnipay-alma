@@ -3,6 +3,7 @@
 namespace Omnipay\Alma;
 
 use Omnipay\Common\AbstractGateway;
+use Omnipay\Alma\Message\Notification;
 use Alma;
 
 /**
@@ -10,6 +11,7 @@ use Alma;
  */
 class Gateway extends AbstractGateway
 {
+
     public function getName()
     {
         return 'Alma';
@@ -18,8 +20,8 @@ class Gateway extends AbstractGateway
     public function getDefaultParameters()
     {
         return array(
-            'key' => '',
-            'testMode' => false,
+            'apikey' => config('alma.credentials.key'),
+            'testMode' => config('alma.credentials.sandbox'),
         );
     }
 
@@ -33,28 +35,14 @@ class Gateway extends AbstractGateway
         return $this->setParameter('apikey', $value);
     }
 
-    public function eligibility(array $parameters = array())
+    public function acceptNotification()
     {
-        $alma = new Alma\API\Client($this->getApiKey(), ['mode' => $this->getTestMode() ? Alma\API\TEST_MODE : Alma\API\LIVE_MODE]);
-
-        return $alma->payments->eligibility(['payment' => ['purchase_amount' => round($parameters['amount']*100)]]);
-    }
-
-    public function isEligible(array $parameters = array())
-    {
-        $eligibility = $this->eligibility($parameters);
-
-        return $eligibility->isEligible();
+        return new Notification($this);
     }
 
     public function purchase(array $parameters = array())
     {
         return $this->createRequest('\Omnipay\Alma\Message\PurchaseRequest', $parameters);
     }
-
-    public function completePurchase(array $parameters = array())
-    {
-        $parameters['transaction_reference'] = request('pid');
-        return $this->createRequest('\Omnipay\Alma\Message\CompletePurchaseRequest', $parameters);
-    }
+    
 }

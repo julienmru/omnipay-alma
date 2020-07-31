@@ -94,15 +94,6 @@ abstract class AbstractRequest extends BaseAbstractRequest
         return $this->createResponse($data);
     }
 
-    protected function getBaseData()
-    {
-        return [
-            'transaction_id' => $this->getTransactionId(),
-            'expire_date' => $this->getCard()->getExpiryDate('mY'),
-            'start_date' => $this->getCard()->getStartDate('mY'),
-        ];
-    }
-
     protected function createResponse($data)
     {
         return $this->response = new Response($this, $data);
