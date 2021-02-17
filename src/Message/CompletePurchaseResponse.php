@@ -66,6 +66,14 @@ class CompletePurchaseResponse extends AbstractResponse implements RedirectRespo
     /**
      * @return bool
      */
+    public function getRawResponse()
+    {
+        return ($this->response);
+    }
+
+    /**
+     * @return bool
+     */
     public function isSuccessful()
     {
         return ($this->successful);
