@@ -1,17 +1,17 @@
 {
-    "name": "cariagency/omnipay-alma",
+    "name": "julienmru/omnipay-alma",
     "description": "Alma driver for the Omnipay PHP payment processing library",
     "keywords": [
         "omnipay",
         "alma"
     ],
-    "homepage": "https://github.com/cariagency/omnipay-alma",
+    "homepage": "https://github.com/julienmru/omnipay-alma",
     "license": "MIT",
     "authors": [
         {
             "name": "Julien Tessier",
-            "email": "julien@cari.agency",
-            "homepage": "https://www.cari.agency/"
+            "email": "julien@utile.co",
+            "homepage": "https://www.utile.co/"
         }
     ],
     "require": {

@@ -10,7 +10,7 @@ processing library for PHP 5.6+. This package implements Alma support for Omnipa
 Instal the gateway using require. Require the `league/omnipay` base package and this gateway.
 
 ``` bash
-$ composer require league/omnipay cariagency/omnipay-alma
+$ composer require league/omnipay julienmru/omnipay-alma
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ For general usage instructions, please see the main [Omnipay](https://github.com
 
 ## Support
 
-If you believe you have found a bug, please report it using the [GitHub issue tracker](https://github.com/cariagency/omnipay-alma/issues),
+If you believe you have found a bug, please report it using the [GitHub issue tracker](https://github.com/julienmru/omnipay-alma/issues),
 or better yet, fork the library and submit a pull request.
 
 ## Contributing

@@ -28,7 +28,7 @@ abstract class AbstractRequest extends BaseAbstractRequest
         $data = [
                 'payment' => 
                     [
-                        'purchase_amount' => round($this->getAmount()*100),
+                        'purchase_amount' => intval(round($this->getAmount()*100)),
                     ]
             ];
 
